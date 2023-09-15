@@ -9,6 +9,8 @@ bash ./install_geographiclib_datasets.sh
 cd /home/ubuntu/catkin_ws/src/
 git clone https://github.com/AlexandrShipovsky/aruco_gridboard.git
 
+cd -
+
 rm /opt/ros/noetic/share/mavros/launch/px4_pluginlists.yaml
 rm /opt/ros/noetic/share/mavros/launch/apm_config.yaml
 
