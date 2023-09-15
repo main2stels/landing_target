@@ -27,7 +27,6 @@ rosrun robot_upstart install aruco_gridboard/launch/detection_rpicam.launch
 
 cp -f $PWD/aruco.service /etc/systemd/system/multi-user.target.wants/aruco.service
 
-cp -f /home/ubuntu/catkin_ws/src/aruco_gridboard/data/camerav1_1280x720.yaml /home/ubuntu/.ros/camera_info/camerav1_1280x720.yaml
 cp -f /home/ubuntu/catkin_ws/src/aruco_gridboard/data/camerav1_1280x720.yaml /opt/ros/noetic/share/raspicam_node/camera_info/camerav1_1280x720.yaml
 
 systemctl daemon-reload
