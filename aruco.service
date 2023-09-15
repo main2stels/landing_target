@@ -1,0 +1,15 @@
+# THIS IS A GENERATED FILE, NOT RECOMMENDED TO EDIT.
+
+[Unit]
+Description="bringup aruco"
+After=network.target
+
+[Service]
+ExecStartPre=/bin/sleep 30
+Restart=on-failure
+RestartSec=10s
+Type=simple
+ExecStart=/usr/sbin/aruco-start
+
+[Install]
+WantedBy=multi-user.target
