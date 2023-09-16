@@ -38,7 +38,7 @@ apt-get install ros-noetic-robot-upstart -y
 echo SLEEP_10
 
 sleep 10
-
+source /home/ubuntu/catkin_ws/devel/setup.bash
 rosrun robot_upstart install aruco_gridboard/launch/detection_rpicam.launch
 
 cd -
