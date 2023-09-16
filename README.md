@@ -17,3 +17,6 @@
 <p>PLND_LAG=0,1</p>
 <p>PLND_TYPE=1</p>
 <p>PLND_XY_DIST_MAX=10</p>
+<p>Для SERIAL к которому подключена raspberry:</p>
+<p>SERIAL2_BAUD=921</p>
+<p>SERIAL2_PROTOCOL=2</p>
