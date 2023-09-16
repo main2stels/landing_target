@@ -1,5 +1,7 @@
 # landing_target
+<p>Raspberri должа быть подключена к интернету</p>
 <p>Запустить:</p>
+<p>(После первого запуска) sudo reboot</p>
 <p>git clone https://github.com/main2stels/landing_target.git</p>
 <p>cd landing_target/</p>
 <p>sudo bash ./rosinstall.sh</p>
