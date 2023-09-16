@@ -24,12 +24,13 @@ cp $PWD/mavros_launch/apm_config.yaml /opt/ros/noetic/share/mavros/launch/apm_co
 cd /home/ubuntu/catkin_ws/
 
 
-echo MAKE
 
-catkin_make
-
+echo INSTALL PYTHON
 apt install python-is-python3
 pip3 install pymavlink
+
+echo MAKE
+catkin_make
 
 apt-get install ros-noetic-robot-upstart -y
 
