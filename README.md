@@ -1,5 +1,6 @@
 # landing_target
 <p>Raspberri должа быть подключена к интернету</p>
+<p>Пароль wifi raspberry: robotseverywhere</p>
 <p>Запустить:</p>
 <p>(После первого запуска) sudo reboot</p>
 <p>git clone https://github.com/main2stels/landing_target.git</p>
