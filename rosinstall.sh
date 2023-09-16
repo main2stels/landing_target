@@ -30,6 +30,7 @@ apt install python-is-python3
 pip3 install pymavlink
 
 echo MAKE
+source /opt/ros/noetic/setup.bash
 catkin_make
 
 apt-get install ros-noetic-robot-upstart -y
