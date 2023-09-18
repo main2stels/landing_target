@@ -2,6 +2,7 @@
 <p>Образ:</p>
 <p>https://disk.yandex.ru/d/Zy6PdU75LF4qDA</p>
 <p>Raspberri должа быть подключена к интернету</p>
+<p>Пользователь: ubuntu пароль: ubuntu</p>
 <p>Пароль wifi raspberry: robotseverywhere</p>
 <p>Запустить:</p>
 <p>(После первого запуска) sudo reboot</p>
