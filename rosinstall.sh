@@ -46,6 +46,7 @@ cd -
 cp -f $PWD/aruco.service /etc/systemd/system/multi-user.target.wants/aruco.service
 
 cp -f /home/ubuntu/catkin_ws/src/aruco_gridboard/data/camerav1_640x480.yaml /opt/ros/noetic/share/raspicam_node/camera_info/camerav1_640x480.yaml
+cp -f /home/ubuntu/catkin_ws/src/aruco_gridboard/data/camerav1_640x480.launch /opt/ros/noetic/share/raspicam_node/launch/camerav1_640x480.launch
 
 systemctl daemon-reload
 systemctl start aruco
