@@ -1,15 +1,19 @@
 #!/bin/sh
 echo INSTALL ROS 
-apt-get install ros-noetic-mavros ros-noetic-mavros-extras ros-noetic-mavros-msgs -y
-apt-get install ros-noetic-image-geometry -y
-apt-get install ros-noetic-resource-retriever -y
+apt-get install ros-noetic-mavros ros-noetic-mavros-extras ros-noetic-mavros-msgs   -y
+apt-get install ros-noetic-image-geometry                                           -y
+apt-get install ros-noetic-resource-retriever                                       -y
+apt-get install ros-noetic-serial                                                   -y
 
 wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
 bash ./install_geographiclib_datasets.sh
 
+
+
 echo CLONE GRIDBOARD
 cd /home/ubuntu/catkin_ws/src/
 git clone https://github.com/AlexandrShipovsky/aruco_gridboard.git
+git clone https://github.com/Enem-20/bms_manager.git
 
 cd -
 
@@ -26,7 +30,7 @@ cd /home/ubuntu/catkin_ws/
 
 
 echo INSTALL PYTHON
-apt install python-is-python3
+apt install python-is-python3 libxml2-dev libxslt-dev
 pip3 install pymavlink
 
 echo MAKE
@@ -39,6 +43,7 @@ echo SLEEP_10
 
 sleep 10
 source /home/ubuntu/catkin_ws/devel/setup.bash
+rosrun bms_manager bms_manager_node
 rosrun robot_upstart install aruco_gridboard/launch/detection_rpicam.launch
 
 cd -
