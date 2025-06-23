@@ -8,6 +8,7 @@
 <p>(После первого запуска) sudo reboot</p>
 <p>git clone https://github.com/main2stels/landing_target.git</p>
 <p>cd landing_target/</p>
+<p>git checkout landing_target_and_bms_manager</p>
 <p>sudo bash ./rosinstall.sh</p>
 <h1>Параметр лист: </h1>
 <p>PLND_ENABLED=1</p>

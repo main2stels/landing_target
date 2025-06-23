@@ -1,5 +1,4 @@
 #!/bin/sh
-git checkout landing_target_and_bms_manager
 echo INSTALL ROS 
 apt-get install ros-noetic-mavros ros-noetic-mavros-extras ros-noetic-mavros-msgs   -y
 apt-get install ros-noetic-image-geometry                                           -y
