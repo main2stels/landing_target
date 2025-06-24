@@ -36,9 +36,8 @@ pip3 install feature
 echo INSTALL pymavlink FROM SOURCE
 wget https://files.pythonhosted.org/packages/source/p/pymavlink/pymavlink-2.4.47.tar.gz
 tar -xzf pymavlink-2.4.47.tar.gz
-cd pymavlink-2.4.47
-python3 setup.py install
-cd ..
+tar -xzf pymavlink-2.4.47.tar.gz
+(cd pymavlink-2.4.47 && python3 setup.py install)
 rm -rf pymavlink-2.4.47 pymavlink-2.4.47.tar.gz
 
 echo MAKE
