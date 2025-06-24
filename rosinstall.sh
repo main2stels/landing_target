@@ -31,7 +31,7 @@ cd /home/ubuntu/catkin_ws/
 
 echo INSTALL PYTHON
 apt install python-is-python3 libxml2-dev libxslt-dev
-pip3 install pymavlink
+pip3 install --no-cache-dir --no-build-isolation pymavlink
 
 echo MAKE
 source /opt/ros/noetic/setup.bash
