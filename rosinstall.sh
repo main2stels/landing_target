@@ -1,5 +1,5 @@
 #!/bin/sh
-echo INSTALL ROS 
+echo INSTALL ROS
 apt-get install ros-noetic-mavros ros-noetic-mavros-extras ros-noetic-mavros-msgs   -y
 apt-get install ros-noetic-image-geometry                                           -y
 apt-get install ros-noetic-resource-retriever                                       -y
@@ -12,6 +12,7 @@ bash ./install_geographiclib_datasets.sh
 
 echo CLONE GRIDBOARD
 cd /home/ubuntu/catkin_ws/src/
+
 git clone https://github.com/AlexandrShipovsky/aruco_gridboard.git
 git clone https://github.com/Enem-20/bms_manager.git
 
@@ -27,17 +28,24 @@ cp $PWD/mavros_launch/apm_config.yaml /opt/ros/noetic/share/mavros/launch/apm_co
 
 cd /home/ubuntu/catkin_ws/
 
+echo INSTALL PYTHON DEPENDENCIES
+apt update
+apt install -y python-is-python3 libxml2-dev libxslt-dev build-essential python3-dev wget
+pip3 install feature
 
-
-echo INSTALL PYTHON
-apt install python-is-python3 libxml2-dev libxslt-dev
-pip3 install --no-cache-dir --no-build-isolation pymavlink
+echo INSTALL pymavlink FROM SOURCE
+wget https://files.pythonhosted.org/packages/source/p/pymavlink/pymavlink-2.4.47.tar.gz
+tar -xzf pymavlink-2.4.47.tar.gz
+cd pymavlink-2.4.47
+python3 setup.py install
+cd ..
+rm -rf pymavlink-2.4.47 pymavlink-2.4.47.tar.gz
 
 echo MAKE
 source /opt/ros/noetic/setup.bash
 catkin_make
 
-apt-get install ros-noetic-robot-upstart -y
+apt-get install -y ros-noetic-robot-upstart
 
 echo SLEEP_10
 
@@ -49,9 +57,12 @@ rosrun robot_upstart install aruco_gridboard/launch/detection_rpicam.launch
 cd -
 
 cp -f $PWD/aruco.service /etc/systemd/system/multi-user.target.wants/aruco.service
+cp -f /home/ubuntu/catkin_ws/src/bms_manager/bms_manager.service /etc/systemd/system/bms_manager.service
 
 cp -f /home/ubuntu/catkin_ws/src/aruco_gridboard/data/camerav1_640x480.yaml /opt/ros/noetic/share/raspicam_node/camera_info/camerav1_640x480.yaml
 cp -f /home/ubuntu/catkin_ws/src/aruco_gridboard/data/camerav1_640x480.launch /opt/ros/noetic/share/raspicam_node/launch/camerav1_640x480.launch
 
 systemctl daemon-reload
 systemctl start aruco
+systemctl enable bms_manager.service
+systemctl start bms_manager.service
