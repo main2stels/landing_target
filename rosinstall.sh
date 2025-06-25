@@ -1,4 +1,12 @@
 #!/bin/sh
+
+#ros repo deprecated key fix. should be fixed by replace image!!
+sudo apt-key del F42ED6FBAB17C654
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | sudo tee /usr/share/keyrings/ros-archive-keyring.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/ros-latest.list > /dev/null
+sudo apt update
+###########################################
+
 echo INSTALL ROS
 apt-get install ros-noetic-mavros ros-noetic-mavros-extras ros-noetic-mavros-msgs   -y
 apt-get install ros-noetic-image-geometry                                           -y
