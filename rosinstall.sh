@@ -21,6 +21,9 @@ bash ./install_geographiclib_datasets.sh
 echo CLONE GRIDBOARD
 cd /home/ubuntu/catkin_ws/src/
 
+sudo rm -rf /home/ubuntu/catkin_ws/src/bms_manager
+sudo rm -rf /home/ubuntu/catkin_ws/src/aruco_gridboard
+
 git clone https://github.com/AlexandrShipovsky/aruco_gridboard.git
 git clone https://github.com/Enem-20/bms_manager.git
 
