@@ -39,7 +39,7 @@ cd /home/ubuntu/catkin_ws/
 echo INSTALL PYTHON DEPENDENCIES
 apt update
 apt install -y python-is-python3 libxml2-dev libxslt-dev build-essential python3-dev wget
-pip3 install feature
+pip3 install future
 
 echo INSTALL pymavlink FROM SOURCE
 wget https://files.pythonhosted.org/packages/source/p/pymavlink/pymavlink-2.4.47.tar.gz
