@@ -26,6 +26,7 @@ sudo rm -rf /home/ubuntu/catkin_ws/src/aruco_gridboard
 
 git clone https://github.com/AlexandrShipovsky/aruco_gridboard.git
 git clone https://github.com/Enem-20/bms_manager.git
+cd /home/ubuntu/catkin_ws/src/
 
 cd -
 
@@ -65,7 +66,7 @@ rosrun robot_upstart install aruco_gridboard/launch/detection_rpicam.launch
 
 cd -
 
-cp -f $PWD/aruco.service /etc/systemd/system/multi-user.target.wants/aruco.service
+cp -f /home/ubuntu/landing_target/aruco.service /etc/systemd/system/multi-user.target.wants/aruco.service
 cp -f /home/ubuntu/catkin_ws/src/bms_manager/bms_manager.service /etc/systemd/system/bms_manager.service
 
 cp -f /home/ubuntu/catkin_ws/src/aruco_gridboard/data/camerav1_640x480.yaml /opt/ros/noetic/share/raspicam_node/camera_info/camerav1_640x480.yaml
